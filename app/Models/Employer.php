@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Job extends Model
+class Employer extends Model
 {
     use HasFactory;
 
-    // Definieer de relatie met de Employer
-    public function employer()
+    public function jobs()
     {
-        return $this->belongsTo(Employer::class);
+        return $this->hasMany(Job::class);
     }
 }
